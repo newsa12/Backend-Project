@@ -3,7 +3,7 @@ _Project in &lt;DO IT>_
 
 ## Church Website Development Project
 
-This project is a personal project carried out as part of the activities of the campus development collaboration club **DO IT**. The goal is to develop a website that efficiently manages church affairs, administration, schedules, activities, worship services, etc. This site aims to digitize important information within the church and help the congregation engage in activities more systematically.
+> This project is a personal project carried out as part of the activities of the campus development collaboration club **DO IT**. The goal is to develop a website that efficiently manages church affairs, administration, schedules, activities, worship services, etc. This site aims to digitize important information within the church and help the congregation engage in activities more systematically.
 
 ## Table of Contents
 
@@ -39,6 +39,10 @@ The website aims to digitize church administration, schedule management, worship
 - Allow the congregation to easily access necessary information and manage personal activities.
 - Use the website to promote the church and attract new members.
 
+### Flowchart
+<p align="left">
+  <img src="https://i.imgur.com/gRR6PkH.png" width="300">
+</p>
 
 ## Main Features
 1. **Sign Up/Login**
