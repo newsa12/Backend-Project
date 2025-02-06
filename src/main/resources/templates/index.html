@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>우리교회 홈페이지</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f9f9f9;
+        }
+        .nav {
+            background-color: #333;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+        .nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+        }
+        .nav ul li {
+            margin-right: 20px;
+        }
+        .nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .auth-buttons {
+            margin-right: 20px;
+        }
+        .auth-buttons a {
+            color: white;
+            text-decoration: none;
+            margin-left: 10px;
+            font-weight: bold;
+        }
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 네비게이션 메뉴 -->
+<div th:replace="~{fragments/navbar :: nav}"></div>
+
+<div class="container">
+    <h1>환영합니다! 우리 교회 홈페이지에 오신 것을 환영합니다.</h1>
+</div>
+
+</body>
+</html>

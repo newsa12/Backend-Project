@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>교회 소개</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+
+<div th:replace="~{fragments/navbar :: nav}"></div>
+
+<div class="container">
+    <h1>우리 교회를 소개합니다</h1>
+
+    <h2>📖 교회 소개</h2>
+    <p>우리 교회는 사랑과 믿음으로 하나 되는 공동체입니다</p>
+
+    <h2>📅 연혁</h2>
+    <ul>
+        <li><strong>1998년</strong> - 교회 설립</li>
+        <li><strong>2000년</strong> - 새 성전 건축</li>
+        <li><strong>2010년</strong> - 해외 선교사 파송</li>
+        <li><strong>2021년</strong> - 온라인 예배 시스템 구축</li>
+    </ul>
+
+    <h2>🛠 조직도</h2>
+    <table border="1">
+        <tr>
+            <th>직책</th>
+            <th>이름</th>
+        </tr>
+        <tr>
+            <td>담임 목사</td>
+            <td>김철수</td>
+        </tr>
+        <tr>
+            <td>부목사</td>
+            <td>박철수</td>
+        </tr>
+        <tr>
+            <td>전도사</td>
+            <td>신철수</td>
+        </tr>
+        <tr>
+            <td>찬양팀</td>
+            <td>안철수</td>
+        </tr>
+    </table>
+
+    <h2>📍 오시는 길</h2>
+    <p>서울 도봉구 행복로 123</p>
+
+    <div class="map-container">
+        <!-- Google 지도 -->
+        <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093744!2d127.0369262!3d37.6615466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357cbeb45c4a1529%3A0x77331ba21b48758a!2z6rK96riw7LCo7KCV7IucIOqzte2Vmeq1rCDqs6TroZwgMjDri7kgMw!5e0!3m2!1sko!2skr!4v1700000000000"
+                width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+    </div>
+
+    <style>
+        .map-container {
+            width: 400px; /* 적당한 크기로 조정 */
+            height: 300px;
+            margin-left: 0; /* 왼쪽 정렬 */
+        }
+    </style>
+
+
+</div>
+
+</body>
+</html>

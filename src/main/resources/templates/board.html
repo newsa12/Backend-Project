@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>게시판</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<!-- 네비게이션 바 포함 -->
+<div th:replace="~{fragments/navbar :: nav}"></div>
+
+<h1>게시판</h1>
+
+<!-- 로그인한 사용자만 글 작성 가능 -->
+<div th:if="${#httpServletRequest.remoteUser != null}">
+  <input type="text" id="title" placeholder="제목">
+  <textarea id="content" placeholder="내용"></textarea>
+  <button onclick="createPost()">글 작성</button>
+</div>
+
+<!-- 게시글 목록 -->
+<div id="posts">
+  <div th:each="post : ${posts}">
+    <h2 th:text="${post.title}"></h2>
+    <p th:text="${post.content}"></p>
+    <small th:text="${#temporals.format(post.createdAt, 'yyyy-MM-dd HH:mm')}"></small>
+
+    <!-- 로그인한 사용자만 수정 및 삭제 가능 -->
+    <div th:if="${#httpServletRequest.remoteUser != null}">
+      <button th:attr="onclick='editPost(' + ${post.id} + ')'" >수정</button>
+      <button th:attr="onclick='deletePost(' + ${post.id} + ')'" >삭제</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  async function createPost() {
+    const title = document.getElementById('title').value;
+    const content = document.getElementById('content').value;
+
+    if (!title || !content) {
+      alert("제목과 내용을 입력하세요!");
+      return;
+    }
+
+    await fetch('/posts', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ title, content })
+    });
+
+    location.reload(); // 새로고침하여 게시글 갱신
+  }
+
+  async function editPost(id) {
+    const newTitle = prompt("새로운 제목을 입력하세요:");
+    const newContent = prompt("새로운 내용을 입력하세요:");
+
+    if (newTitle && newContent) {
+      await fetch(`/posts/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ title: newTitle, content: newContent })
+      });
+      location.reload();
+    }
+  }
+
+  async function deletePost(id) {
+    if (confirm("정말 삭제하시겠습니까?")) {
+      await fetch(`/posts/${id}`, { method: 'DELETE' });
+      location.reload();
+    }
+  }
+</script>
+
+</body>
+</html>

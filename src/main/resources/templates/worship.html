@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예배 안내</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+
+<div th:replace="~{fragments/navbar :: nav}"></div>
+
+<div class="container">
+    <h1>예배 안내</h1>
+    <p>예배 일정은 아래와 같습니다.</p>
+
+    <h2>예배 시간</h2>
+    <ul>
+        <li>주일 예배: 오전 11시</li>
+        <li>수요 예배: 오후 7시 30분</li>
+        <li>금요 철야 예배: 오후 9시</li>
+        <li>새벽 기도회: 매일 오전 4시 30분</li>
+    </ul>
+
+    <h2>예배 장소</h2>
+    <p>서울 행복구 행복동 우리교회 본당</p>
+</div>
+
+</body>
+</html>
